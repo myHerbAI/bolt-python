@@ -3,7 +3,12 @@ jobs:
   Job1:
     name: Job 1
     steps:
-      - type: maven
+      - type: node-js
+        shell-script: npm ci
+        docker-image: node:lts
+      - type: gradle
+        working-directory: .git
+        use-gradle-wrapper: ''
     runs-on: Linux-Medium
     enable-dependency-cache: true
     parallelism: 3
