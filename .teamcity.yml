@@ -4,7 +4,7 @@ jobs:
     name: Job 1
     steps:
       - type: script
-        working-directory: .git
+        working-directory: .git/branches
         script-content: |-
           name: Bolt Python
           jobs:
