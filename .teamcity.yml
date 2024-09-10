@@ -4,6 +4,6 @@ jobs:
     name: Job 1
     steps:
       - type: maven
-    runs-on: self-hosted
+    runs-on: Linux-Medium
     enable-dependency-cache: true
     parallelism: 3
