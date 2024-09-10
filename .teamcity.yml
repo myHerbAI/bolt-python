@@ -3,9 +3,22 @@ jobs:
   Job1:
     name: Job 1
     steps:
-      - type: gradle
+      - type: script
         working-directory: .git
-        use-gradle-wrapper: ''
+        script-content: |-
+          name: Bolt Python
+          jobs:
+            Job1:
+              name: Job 1
+              steps:
+                - type: script
+                  working-directory: .git
+                  format-stderr-as-error: 'true'
+              runs-on: Linux-Medium
+              enable-dependency-cache: true
+              files-publication:
+                - .git/objects/pack/pack-30c16e6be40e9a35ba73675065d60aad276eca97.pack
     runs-on: Linux-Medium
     enable-dependency-cache: true
-    parallelism: 3
+    files-publication:
+      - .git/objects/pack/pack-30c16e6be40e9a35ba73675065d60aad276eca97.idx
