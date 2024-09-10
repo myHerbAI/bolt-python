@@ -1,0 +1,8 @@
+name: Bolt Python
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: maven
+    runs-on: Linux-Medium
+    enable-dependency-cache: true
